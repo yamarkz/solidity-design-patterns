@@ -32,6 +32,7 @@ contract CommitReveal {
     }
     
     function reveal(string _choice, string _secret, bytes32 _commit) public returns (bool success) {
+
         var userCommit = userCommits[msg.sender][_commit];
         
         bytes memory bytesStatus = bytes(userCommit.status);
@@ -62,3 +63,5 @@ contract CommitReveal {
         return (userCommit.choice, userCommit.secret, userCommit.status);
     }
 }
+
+
